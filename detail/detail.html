@@ -1,0 +1,34 @@
+<div ng-show="res">
+<h1 class="page-header">{{title}}<span>({{year}})</span></h1>
+<div class="media">
+    <a class="pull-left" href="#">
+        <img class="media-object" ng-src={{image}}>
+    </a>
+    <div class="media-body">
+        <h4 class="media-heading">{{title}}</h4>
+        <div class="detail">
+            <p>导演: <span ng-repeat="director in directors">{{director.name}} {{$last?'':'/ '}}</span></p>
+            <p>主演: <span ng-repeat="cast in casts">{{cast.name}} {{$last?'':'/ '}}</span></p>
+            <p>类型: <span>{{genres.join('/ ')}}</span></p>
+            <p>制片国家/地区: <span>{{countries.join('/ ')}}</span></p>
+            <p>电影评分: <span>{{average}}</span></p>
+            <p>又名: <span>{{aka}}</span></p>
+        </div>
+
+        <!-- Nested media object -->
+        <div class="media">
+            <p>详情介绍:</p>
+            &nbsp;&nbsp;{{summary}}
+        </div>
+    </div>
+</div>
+</div>
+<div class="mask" ng-hide="res">
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
